@@ -1,0 +1,243 @@
+{
+  "legacy_used": {
+    "concepts": [
+      {
+        "title": "AI Watermarking",
+        "issue": 1
+      },
+      {
+        "title": "Context Window",
+        "issue": 2
+      },
+      {
+        "title": "Open Source",
+        "issue": 3
+      },
+      {
+        "title": "Benchmark",
+        "issue": 4
+      },
+      {
+        "title": "AI Agent",
+        "issue": 5
+      },
+      {
+        "title": "AI Alignment",
+        "issue": 6
+      },
+      {
+        "title": "Prompt Injection",
+        "issue": 7
+      },
+      {
+        "title": "Always-On Agent",
+        "issue": 8
+      }
+    ],
+    "resources": [
+      {
+        "title": "ChatGPT Prompt Engineering for Developers",
+        "issue": 1
+      },
+      {
+        "title": "Claude Skills, Plugins & Connectors",
+        "issue": 2
+      },
+      {
+        "title": "Introducing Claude Design",
+        "issue": 3
+      },
+      {
+        "title": "Tool School: Benchmarking 101",
+        "issue": 4
+      },
+      {
+        "title": "Get started with Google Workspace with Gemini",
+        "issue": 5
+      },
+      {
+        "title": "How to Spot AI Hallucinations: 7 Red Flags",
+        "issue": 6
+      },
+      {
+        "title": "AI Reasoning Effort Levels: The Setting Everyone Gets Wrong",
+        "issue": 7
+      },
+      {
+        "title": "Skill, Subagent, or Swarm? A Beginner's Guide",
+        "issue": 8
+      }
+    ]
+  },
+  "used_by_issue": {
+    "2026-10-12": {
+      "concept_id": "concept-11",
+      "resource_id": "resource-02",
+      "concept_title": "Small Language Model",
+      "resource_title": "AI Prompting for Everyone",
+      "similarity": {
+        "concept": {
+          "selected_id": "concept-11",
+          "selected_title": "Small Language Model",
+          "score": 0.640962,
+          "closest_news": {
+            "slot": "other_ai",
+            "title": "Anthropic Releases Claude Haiku 5.5 at Lower API Prices",
+            "score": 0.640962
+          },
+          "compared_with_all_five_news": [
+            {
+              "slot": "lead_ai",
+              "title": "OpenAI Shares New Mathematics Research Results",
+              "score": 0.601392
+            },
+            {
+              "slot": "ai_healthcare",
+              "title": "Clinical Trial Tests Google Chatbot in Urgent Care",
+              "score": 0.576023
+            },
+            {
+              "slot": "other_ai",
+              "title": "Anthropic Releases Claude Haiku 5.5 at Lower API Prices",
+              "score": 0.640962
+            },
+            {
+              "slot": "health_insurance_india_a",
+              "title": "IRDAI Rules Out Phase-In for Proposed Commission Caps",
+              "score": 0.499363
+            },
+            {
+              "slot": "health_insurance_india_b",
+              "title": "Care Health Premium Income Rises 44% in September",
+              "score": 0.48426
+            }
+          ],
+          "unused_candidates_compared": 50
+        },
+        "resource": {
+          "selected_id": "resource-02",
+          "selected_title": "AI Prompting for Everyone",
+          "score": 0.587835,
+          "closest_news": {
+            "slot": "other_ai",
+            "title": "Anthropic Releases Claude Haiku 5.5 at Lower API Prices",
+            "score": 0.587835
+          },
+          "compared_with_all_five_news": [
+            {
+              "slot": "lead_ai",
+              "title": "OpenAI Shares New Mathematics Research Results",
+              "score": 0.563175
+            },
+            {
+              "slot": "ai_healthcare",
+              "title": "Clinical Trial Tests Google Chatbot in Urgent Care",
+              "score": 0.567987
+            },
+            {
+              "slot": "other_ai",
+              "title": "Anthropic Releases Claude Haiku 5.5 at Lower API Prices",
+              "score": 0.587835
+            },
+            {
+              "slot": "health_insurance_india_a",
+              "title": "IRDAI Rules Out Phase-In for Proposed Commission Caps",
+              "score": 0.479077
+            },
+            {
+              "slot": "health_insurance_india_b",
+              "title": "Care Health Premium Income Rises 44% in September",
+              "score": 0.44726
+            }
+          ],
+          "unused_candidates_compared": 2,
+          "candidate_pool": "Reviewed nontechnical beginner resources only"
+        }
+      }
+    },
+    "2026-10-19": {
+      "concept_id": "concept-50",
+      "resource_id": "resource-01",
+      "concept_title": "On-Device AI",
+      "resource_title": "Generative AI for Everyone",
+      "similarity": {
+        "concept": {
+          "selected_id": "concept-50",
+          "selected_title": "On-Device AI",
+          "score": 0.656836,
+          "closest_news": {
+            "slot": "lead_ai",
+            "title": "World Bank Highlights Potential of Small AI in Developing Nations",
+            "score": 0.656836
+          },
+          "compared_with_all_five_news": [
+            {
+              "slot": "lead_ai",
+              "title": "World Bank Highlights Potential of Small AI in Developing Nations",
+              "score": 0.656836
+            },
+            {
+              "slot": "ai_healthcare",
+              "title": "Fortis Unveils Robotic Hybrid Cath Lab for Cardiac Care",
+              "score": 0.51296
+            },
+            {
+              "slot": "other_ai",
+              "title": "Sarvam AI Releases Bulbul V4 Flash Text-to-Speech Model",
+              "score": 0.587571
+            },
+            {
+              "slot": "health_insurance_india_a",
+              "title": "IRDAI Chairman Urges Focus on Actual Payouts Over Ratios",
+              "score": 0.492326
+            },
+            {
+              "slot": "health_insurance_india_b",
+              "title": "Report Shows Women Comprise 21% of Primary Health Policyholders",
+              "score": 0.507227
+            }
+          ],
+          "unused_candidates_compared": 49
+        },
+        "resource": {
+          "selected_id": "resource-01",
+          "selected_title": "Generative AI for Everyone",
+          "score": 0.573097,
+          "closest_news": {
+            "slot": "lead_ai",
+            "title": "World Bank Highlights Potential of Small AI in Developing Nations",
+            "score": 0.573097
+          },
+          "compared_with_all_five_news": [
+            {
+              "slot": "lead_ai",
+              "title": "World Bank Highlights Potential of Small AI in Developing Nations",
+              "score": 0.573097
+            },
+            {
+              "slot": "ai_healthcare",
+              "title": "Fortis Unveils Robotic Hybrid Cath Lab for Cardiac Care",
+              "score": 0.508107
+            },
+            {
+              "slot": "other_ai",
+              "title": "Sarvam AI Releases Bulbul V4 Flash Text-to-Speech Model",
+              "score": 0.56475
+            },
+            {
+              "slot": "health_insurance_india_a",
+              "title": "IRDAI Chairman Urges Focus on Actual Payouts Over Ratios",
+              "score": 0.484311
+            },
+            {
+              "slot": "health_insurance_india_b",
+              "title": "Report Shows Women Comprise 21% of Primary Health Policyholders",
+              "score": 0.487217
+            }
+          ],
+          "unused_candidates_compared": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,957 @@
+{
+  "version": 1,
+  "concepts": [
+    {
+      "id": "concept-01",
+      "title": "Tokens",
+      "definition": "Small pieces of text a language model reads or writes; token counts affect context use and cost. In a larger workflow, Tokens is one step rather than the whole AI system. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Small pieces of text a language model reads or writes; token counts affect context use and cost. In a larger workflow, Tokens is one step rather than the whole AI system. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-02",
+      "title": "Embeddings",
+      "definition": "Number patterns representing meaning so software can find related text, images, or records. In a larger workflow, Embeddings is one step rather than the whole AI system. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Number patterns representing meaning so software can find related text, images, or records. In a larger workflow, Embeddings is one step rather than the whole AI system. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-03",
+      "title": "Transformer",
+      "definition": "A neural-network design that weighs relationships among input elements. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "A neural-network design that weighs relationships among input elements. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters."
+    },
+    {
+      "id": "concept-04",
+      "title": "Diffusion Model",
+      "definition": "A model that creates media by gradually removing noise from a random pattern. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "A model that creates media by gradually removing noise from a random pattern. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-05",
+      "title": "Fine-Tuning",
+      "definition": "Continuing training on focused examples to adapt a pre-trained model. In a larger workflow, Fine-Tuning is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Continuing training on focused examples to adapt a pre-trained model. In a larger workflow, Fine-Tuning is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-06",
+      "title": "Retrieval-Augmented Generation",
+      "definition": "Retrieving relevant documents and providing them to a model to ground its answer. It helps people discuss what information goes into a tool, what it does, and what comes out. This capability does not guarantee that every answer is correct. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Retrieving relevant documents and providing them to a model to ground its answer. It helps people discuss what information goes into a tool, what it does, and what comes out. This capability does not guarantee that every answer is correct. The distinction matters."
+    },
+    {
+      "id": "concept-07",
+      "title": "Vector Database",
+      "definition": "A store for numerical representations that supports similarity search. In a larger workflow, Vector Database is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. This vocabulary can make AI conversations easier to follow.",
+      "semantic_text": "A store for numerical representations that supports similarity search. In a larger workflow, Vector Database is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-08",
+      "title": "Semantic Search",
+      "definition": "Search that matches meaning rather than requiring the same wording. In a larger workflow, Semantic Search is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Search that matches meaning rather than requiring the same wording. In a larger workflow, Semantic Search is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-09",
+      "title": "Reranking",
+      "definition": "A second search pass that reorders results by relevance to a particular query. In a larger workflow, Reranking is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "A second search pass that reorders results by relevance to a particular query. In a larger workflow, Reranking is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-10",
+      "title": "Foundation Model",
+      "definition": "A model trained broadly and adapted as a starting point for many tasks. In a larger workflow, Foundation Model is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "A model trained broadly and adapted as a starting point for many tasks. In a larger workflow, Foundation Model is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-11",
+      "title": "Small Language Model",
+      "definition": "A small language model (SLM) has fewer parameters than a larger model and may be quicker or cheaper on focused tasks. Anthropic's Claude Haiku 5.5 is a current example: it handles classification, extraction and routing at low API prices. Smaller models can suit routine work, though fit still depends on the task.",
+      "semantic_text": "A language model with fewer parameters that may be faster or cheaper for focused tasks. It helps people discuss what information goes into a tool, what it does, and what comes out. This capability does not guarantee that every answer is correct."
+    },
+    {
+      "id": "concept-12",
+      "title": "Multimodal AI",
+      "definition": "AI that processes or produces multiple formats, such as text, images, audio, and video. It helps people discuss what information goes into a tool, what it does, and what comes out. This capability does not guarantee that every answer is correct. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "AI that processes or produces multiple formats, such as text, images, audio, and video. It helps people discuss what information goes into a tool, what it does, and what comes out. This capability does not guarantee that every answer is correct."
+    },
+    {
+      "id": "concept-13",
+      "title": "Model Inference",
+      "definition": "The stage when a trained model processes new input to produce an output. In a larger workflow, Model Inference is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "The stage when a trained model processes new input to produce an output. In a larger workflow, Model Inference is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-14",
+      "title": "Pretraining",
+      "definition": "The initial broad training stage in which a model learns patterns from data. In a larger workflow, Pretraining is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "The initial broad training stage in which a model learns patterns from data. In a larger workflow, Pretraining is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-15",
+      "title": "Post-Training",
+      "definition": "Adapting a pre-trained model to follow instructions or perform preferred tasks. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "Adapting a pre-trained model to follow instructions or perform preferred tasks. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-16",
+      "title": "Quantization",
+      "definition": "Representing model numbers with fewer bits to reduce memory use and sometimes improve speed. In a larger workflow, Quantization is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. People still need context to use it well.",
+      "semantic_text": "Representing model numbers with fewer bits to reduce memory use and sometimes improve speed. In a larger workflow, Quantization is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-17",
+      "title": "Model Distillation",
+      "definition": "Transferring patterns learned by a larger model into a smaller one. In a larger workflow, Model Distillation is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. This vocabulary can make AI conversations easier to follow.",
+      "semantic_text": "Transferring patterns learned by a larger model into a smaller one. In a larger workflow, Model Distillation is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-18",
+      "title": "Synthetic Data",
+      "definition": "Artificially generated examples used to train or evaluate a system. In a larger workflow, Synthetic Data is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Artificially generated examples used to train or evaluate a system. In a larger workflow, Synthetic Data is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-19",
+      "title": "Reinforcement Learning from Human Feedback",
+      "definition": "Using people’s preferences to guide a model toward more useful responses. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Using people’s preferences to guide a model toward more useful responses. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-20",
+      "title": "Supervised Learning",
+      "definition": "Learning from examples paired with known answers or labels. In a larger workflow, Supervised Learning is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Learning from examples paired with known answers or labels. In a larger workflow, Supervised Learning is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. The distinction matters."
+    },
+    {
+      "id": "concept-21",
+      "title": "Unsupervised Learning",
+      "definition": "Finding patterns or groups in data without supplied answer labels. In a larger workflow, Unsupervised Learning is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "Finding patterns or groups in data without supplied answer labels. In a larger workflow, Unsupervised Learning is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-22",
+      "title": "Classification",
+      "definition": "Assigning an item to one or more predefined categories. In a larger workflow, Classification is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output.",
+      "semantic_text": "Assigning an item to one or more predefined categories. In a larger workflow, Classification is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-23",
+      "title": "Named Entity Recognition",
+      "definition": "Finding and labeling people, organizations, dates, and other entities in text. In a larger workflow, Named Entity Recognition is one step rather than the whole AI system. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Finding and labeling people, organizations, dates, and other entities in text. In a larger workflow, Named Entity Recognition is one step rather than the whole AI system. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-24",
+      "title": "Optical Character Recognition",
+      "definition": "Converting text in scanned pages or images into machine-readable characters. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Converting text in scanned pages or images into machine-readable characters. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-25",
+      "title": "Speech-to-Text",
+      "definition": "Converting spoken audio into written words. In a larger workflow, Speech-to-Text is one step rather than the whole AI system. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. People still need context to use it well.",
+      "semantic_text": "Converting spoken audio into written words. In a larger workflow, Speech-to-Text is one step rather than the whole AI system. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct."
+    },
+    {
+      "id": "concept-26",
+      "title": "Text-to-Speech",
+      "definition": "Turning written text into spoken audio. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Turning written text into spoken audio. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters."
+    },
+    {
+      "id": "concept-27",
+      "title": "Computer Vision",
+      "definition": "Software methods that interpret images or video. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. The distinction matters.",
+      "semantic_text": "Software methods that interpret images or video. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct."
+    },
+    {
+      "id": "concept-28",
+      "title": "Image Segmentation",
+      "definition": "Labeling which pixels in an image belong to different objects or regions. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Labeling which pixels in an image belong to different objects or regions. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-29",
+      "title": "Time-Series Forecasting",
+      "definition": "Using measurements collected over time to estimate future values. In a larger workflow, Time-Series Forecasting is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "Using measurements collected over time to estimate future values. In a larger workflow, Time-Series Forecasting is one step rather than the whole AI system. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-30",
+      "title": "Anomaly Detection",
+      "definition": "Flagging data points that differ from a pattern for further review. In a larger workflow, Anomaly Detection is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Flagging data points that differ from a pattern for further review. In a larger workflow, Anomaly Detection is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-31",
+      "title": "Recommendation System",
+      "definition": "Ranking items that may be useful based on user or item signals. In a larger workflow, Recommendation System is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Ranking items that may be useful based on user or item signals. In a larger workflow, Recommendation System is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-32",
+      "title": "Knowledge Graph",
+      "definition": "Connected data that represents entities and their relationships. In a larger workflow, Knowledge Graph is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Connected data that represents entities and their relationships. In a larger workflow, Knowledge Graph is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-33",
+      "title": "Data Lineage",
+      "definition": "Recording where information came from and how it changed through systems. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Recording where information came from and how it changed through systems. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-34",
+      "title": "Data Drift",
+      "definition": "A change in incoming data relative to what a model learned from. In a larger workflow, Data Drift is one step rather than the whole AI system. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. The distinction matters.",
+      "semantic_text": "A change in incoming data relative to what a model learned from. In a larger workflow, Data Drift is one step rather than the whole AI system. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct."
+    },
+    {
+      "id": "concept-35",
+      "title": "Model Calibration",
+      "definition": "Whether model confidence scores match the frequency of correct predictions. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Whether model confidence scores match the frequency of correct predictions. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-36",
+      "title": "A/B Testing for AI",
+      "definition": "Comparing two feature versions under defined conditions to measure an outcome. In a larger workflow, A/B Testing for AI is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Comparing two feature versions under defined conditions to measure an outcome. In a larger workflow, A/B Testing for AI is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters."
+    },
+    {
+      "id": "concept-37",
+      "title": "Human Review in AI Workflows",
+      "definition": "A person checks selected outputs or exceptions at a defined step. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow. People still need context to use it well.",
+      "semantic_text": "A person checks selected outputs or exceptions at a defined step. That context can help a team decide when a person should review an output. This capability does not guarantee that every answer is correct. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-38",
+      "title": "Evaluation Dataset",
+      "definition": "Representative examples and expected answers used to check system performance. In a larger workflow, Evaluation Dataset is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Representative examples and expected answers used to check system performance. In a larger workflow, Evaluation Dataset is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters."
+    },
+    {
+      "id": "concept-39",
+      "title": "Model Card",
+      "definition": "A concise description of a model’s intended uses, evaluation, and limitations. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. This vocabulary can make AI conversations easier to follow.",
+      "semantic_text": "A concise description of a model’s intended uses, evaluation, and limitations. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-40",
+      "title": "Data Minimization",
+      "definition": "Collecting and retaining only the information needed for a defined purpose. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Collecting and retaining only the information needed for a defined purpose. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-41",
+      "title": "Federated Learning",
+      "definition": "Training across data holders while raw records stay in their local environments. In a larger workflow, Federated Learning is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Training across data holders while raw records stay in their local environments. In a larger workflow, Federated Learning is one step rather than the whole AI system. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-42",
+      "title": "Differential Privacy",
+      "definition": "Adding calibrated statistical noise to limit what analysis reveals about one person. In a larger workflow, Differential Privacy is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. People still need context to use it well.",
+      "semantic_text": "Adding calibrated statistical noise to limit what analysis reveals about one person. In a larger workflow, Differential Privacy is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    },
+    {
+      "id": "concept-43",
+      "title": "Grounding",
+      "definition": "Connecting an AI answer to supplied sources or evidence for traceability. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Connecting an AI answer to supplied sources or evidence for traceability. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-44",
+      "title": "Prompt Chaining",
+      "definition": "Breaking a complex request into smaller model steps. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing the term can make AI conversations easier to follow. The distinction matters.",
+      "semantic_text": "Breaking a complex request into smaller model steps. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing the term can make AI conversations easier to follow."
+    },
+    {
+      "id": "concept-45",
+      "title": "Structured Output",
+      "definition": "Asking a model for information in a defined format such as named JSON fields. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Asking a model for information in a defined format such as named JSON fields. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-46",
+      "title": "Function Calling",
+      "definition": "A model requests a defined software function using structured arguments. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "A model requests a defined software function using structured arguments. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-47",
+      "title": "AI Workflow Orchestration",
+      "definition": "Coordinating model calls, data sources, and software steps in sequence. In a larger workflow, AI Workflow Orchestration is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Coordinating model calls, data sources, and software steps in sequence. In a larger workflow, AI Workflow Orchestration is one step rather than the whole AI system. That context can help a team decide when a person should review an output. The distinction matters."
+    },
+    {
+      "id": "concept-48",
+      "title": "Prompt Caching",
+      "definition": "Reusing processed repeated input to reduce repeat processing time or cost. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. Knowing this concept does not guarantee a correct AI answer.",
+      "semantic_text": "Reusing processed repeated input to reduce repeat processing time or cost. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output."
+    },
+    {
+      "id": "concept-49",
+      "title": "Latency and Throughput",
+      "definition": "Latency is time per request; throughput is requests handled over time. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Latency is time per request; throughput is requests handled over time. It helps people discuss what information goes into a tool, what it does, and what comes out. That context can help a team decide when a person should review an output. The distinction matters."
+    },
+    {
+      "id": "concept-50",
+      "title": "On-Device AI",
+      "definition": "Running some model processing on a local phone, computer, or device. In a larger workflow, On-Device AI is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out. The distinction matters. People still need context to use it well.",
+      "semantic_text": "Running some model processing on a local phone, computer, or device. In a larger workflow, On-Device AI is one step rather than the whole AI system. It helps people discuss what information goes into a tool, what it does, and what comes out."
+    }
+  ],
+  "resources": [
+    {
+      "id": "resource-01",
+      "title": "Generative AI for Everyone",
+      "topic": "AI for Everyone",
+      "description": "A beginner course explaining how generative AI works and what it can and cannot do. Real-world examples show common uses and their impact on work and society. No prior AI or coding knowledge is required.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/generative-ai-for-everyone",
+      "what_is_it": "A beginner course explaining how generative AI works and what it can and cannot do. It uses real-world examples to show common uses and their impact on work and society. No prior AI or coding knowledge is required, so the ideas are accessible to non-technical readers.",
+      "recommendation_note": "A practical foundation for following AI developments and asking informed questions at work.",
+      "audience_level": "nontechnical_beginner",
+      "audience_basis": "DeepLearning.AI currently labels it Beginner and says no prior AI knowledge or coding skills are required.",
+      "semantic_text": "Generative AI. A nontechnical course on how generative AI works, its limits, and practical uses."
+    },
+    {
+      "id": "resource-02",
+      "title": "AI Prompting for Everyone",
+      "topic": "Everyday AI prompting",
+      "description": "A beginner course on using AI tools to find information, brainstorm and write, create images, and build simple apps. It shows how clearer prompts can improve results, without requiring a technical background.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/ai-prompting-for-everyone",
+      "what_is_it": "A beginner course on using ChatGPT, Claude or Gemini to find information, brainstorm and write, create images, and build simple apps. It shows how clearer prompts can improve results, without requiring a technical background.",
+      "recommendation_note": "A practical resource for colleagues who use AI in everyday work and want stronger results.",
+      "audience_level": "nontechnical_beginner",
+      "audience_basis": "DeepLearning.AI currently labels it Beginner and says no technical background or coding experience is required.",
+      "semantic_text": "Everyday AI prompting. A beginner course on using ChatGPT, Claude or Gemini to find information, brainstorm and write, create images, and build simple apps."
+    },
+    {
+      "id": "resource-03",
+      "title": "Building and Evaluating Advanced RAG",
+      "topic": "RAG",
+      "description": "Advanced retrieval approaches and ways to assess grounded answers.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-and-evaluating-advanced-rag",
+      "what_is_it": "Advanced retrieval approaches and ways to assess grounded answers. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about RAG.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "RAG. Advanced retrieval approaches and ways to assess grounded answers."
+    },
+    {
+      "id": "resource-04",
+      "title": "Efficiently Serving LLMs",
+      "topic": "Model serving",
+      "description": "How caching, batching, and quantization affect speed and capacity.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/efficiently-serving-llms",
+      "what_is_it": "How caching, batching, and quantization affect speed and capacity. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Model serving.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Model serving. How caching, batching, and quantization affect speed and capacity."
+    },
+    {
+      "id": "resource-05",
+      "title": "Knowledge Graphs for RAG",
+      "topic": "Knowledge graphs",
+      "description": "Representing relationships in graph data and retrieving useful context.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/knowledge-graphs-for-rag",
+      "what_is_it": "Representing relationships in graph data and retrieving useful context. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Knowledge graphs.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Knowledge graphs. Representing relationships in graph data and retrieving useful context."
+    },
+    {
+      "id": "resource-06",
+      "title": "Pretraining LLMs",
+      "topic": "Model training",
+      "description": "Preparing data, configuring a model, and assessing pretraining.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/pretraining-llms",
+      "what_is_it": "Preparing data, configuring a model, and assessing pretraining. The material shows how those ideas fit into the wider field of AI. Readers can build familiarity with the topic and follow related discussions more easily. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Model training.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Model training. Preparing data, configuring a model, and assessing pretraining."
+    },
+    {
+      "id": "resource-07",
+      "title": "Build and Train an LLM with JAX",
+      "topic": "Model training",
+      "description": "A hands-on introduction to building and training a small language model.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/build-and-train-an-llm-with-jax",
+      "what_is_it": "A hands-on introduction to building and training a small language model. It introduces the central ideas behind Model training in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Model training and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Model training. A hands-on introduction to building and training a small language model."
+    },
+    {
+      "id": "resource-08",
+      "title": "Retrieval Augmented Generation",
+      "topic": "RAG",
+      "description": "Retrieval, vector databases, prompts, and evaluation for document-grounded answers.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/retrieval-augmented-generation",
+      "what_is_it": "Retrieval, vector databases, prompts, and evaluation for document-grounded answers. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about RAG.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "RAG. Retrieval, vector databases, prompts, and evaluation for document-grounded answers."
+    },
+    {
+      "id": "resource-09",
+      "title": "LangChain: Chat with Your Data",
+      "topic": "Document Q&A",
+      "description": "Loading and splitting documents to build a chatbot grounded in supplied information.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/langchain-chat-with-your-data",
+      "what_is_it": "Loading and splitting documents to build a chatbot grounded in supplied information. It introduces the central ideas behind Document Q&A in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A practical resource for understanding more about Document Q&A.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Document Q&A. Loading and splitting documents to build a chatbot grounded in supplied information."
+    },
+    {
+      "id": "resource-10",
+      "title": "Post-training of LLMs",
+      "topic": "Model adaptation",
+      "description": "Comparing fine-tuning and preference methods for adapting a model.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/post-training-of-llms",
+      "what_is_it": "Comparing fine-tuning and preference methods for adapting a model. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Model adaptation.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Model adaptation. Comparing fine-tuning and preference methods for adapting a model."
+    },
+    {
+      "id": "resource-11",
+      "title": "Large Multimodal Model Prompting with Gemini",
+      "topic": "Multimodal AI",
+      "description": "Using text, image, and video inputs in AI applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/large-multimodal-model-prompting-with-gemini",
+      "what_is_it": "Using text, image, and video inputs in AI applications. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Multimodal AI.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Multimodal AI. Using text, image, and video inputs in AI applications."
+    },
+    {
+      "id": "resource-12",
+      "title": "Introducing Multimodal Llama 3.2",
+      "topic": "Multimodal AI",
+      "description": "Image understanding, multimodal prompts, and tool calling.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/introducing-multimodal-llama-3-2",
+      "what_is_it": "Image understanding, multimodal prompts, and tool calling. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Multimodal AI.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Multimodal AI. Image understanding, multimodal prompts, and tool calling."
+    },
+    {
+      "id": "resource-13",
+      "title": "Building toward Computer Use with Anthropic",
+      "topic": "Computer use",
+      "description": "Combining multimodal input and tool use in computer interaction workflows.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-toward-computer-use-with-anthropic",
+      "what_is_it": "Combining multimodal input and tool use in computer interaction workflows. Readers can build familiarity with the topic and follow related discussions more easily. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Computer use and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Computer use. Combining multimodal input and tool use in computer interaction workflows."
+    },
+    {
+      "id": "resource-14",
+      "title": "Advanced Retrieval for AI with Chroma",
+      "topic": "Search",
+      "description": "Improving search results and refining semantic retrieval.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/advanced-retrieval-for-ai-with-chroma",
+      "what_is_it": "Improving search results and refining semantic retrieval. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Search.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Search. Improving search results and refining semantic retrieval."
+    },
+    {
+      "id": "resource-15",
+      "title": "Building and Evaluating Data Agents",
+      "topic": "Data applications",
+      "description": "Building data workflows and evaluating plans, context, and answers.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-and-evaluating-data-agents",
+      "what_is_it": "Building data workflows and evaluating plans, context, and answers. It introduces the central ideas behind Data applications in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Data applications and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Data applications. Building data workflows and evaluating plans, context, and answers."
+    },
+    {
+      "id": "resource-16",
+      "title": "Automated Testing for LLMOps",
+      "topic": "Evaluation",
+      "description": "Creating repeatable checks and automated evaluation for AI applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/automated-testing-for-llmops",
+      "what_is_it": "Creating repeatable checks and automated evaluation for AI applications. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Evaluation.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Evaluation. Creating repeatable checks and automated evaluation for AI applications."
+    },
+    {
+      "id": "resource-17",
+      "title": "Prompt Engineering with Llama 2 and 3",
+      "topic": "Prompting",
+      "description": "Writing and comparing prompts for Llama models across tasks.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/prompt-engineering-with-llama-2-and-3",
+      "what_is_it": "Writing and comparing prompts for Llama models across tasks. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Prompting.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Prompting. Writing and comparing prompts for Llama models across tasks."
+    },
+    {
+      "id": "resource-18",
+      "title": "Evaluating AI Agents",
+      "topic": "Evaluation",
+      "description": "Tracing steps and measuring quality in multi-step AI workflows.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/evaluating-ai-agents",
+      "what_is_it": "Tracing steps and measuring quality in multi-step AI workflows. The material shows how those ideas fit into the wider field of AI. Readers can build familiarity with the topic and follow related discussions more easily. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Evaluation.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Evaluation. Tracing steps and measuring quality in multi-step AI workflows."
+    },
+    {
+      "id": "resource-19",
+      "title": "Finetuning Large Language Models",
+      "topic": "Fine-tuning",
+      "description": "Preparing examples, adapting a model, and evaluating a specialized task.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/finetuning-large-language-models",
+      "what_is_it": "Preparing examples, adapting a model, and evaluating a specialized task. It introduces the central ideas behind Fine-tuning in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Fine-tuning and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Fine-tuning. Preparing examples, adapting a model, and evaluating a specialized task."
+    },
+    {
+      "id": "resource-20",
+      "title": "AI Python for Beginners",
+      "topic": "Python",
+      "description": "Programming fundamentals with AI assistance and guided exercises.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/ai-python-for-beginners",
+      "what_is_it": "Programming fundamentals with AI assistance and guided exercises. It introduces the central ideas behind Python in an organized, learner-focused format. The material shows how those ideas fit into the wider field of AI. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Python.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Python. Programming fundamentals with AI assistance and guided exercises."
+    },
+    {
+      "id": "resource-21",
+      "title": "Building AI Applications With Haystack",
+      "topic": "AI applications",
+      "description": "Composing search, retrieval, and language-model components.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-ai-applications-with-haystack",
+      "what_is_it": "Composing search, retrieval, and language-model components. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about AI applications.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "AI applications. Composing search, retrieval, and language-model components."
+    },
+    {
+      "id": "resource-22",
+      "title": "Improving Accuracy of LLM Applications",
+      "topic": "Application quality",
+      "description": "Improving responses through evaluation, prompts, and memory design.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/improving-accuracy-of-llm-applications",
+      "what_is_it": "Improving responses through evaluation, prompts, and memory design. It introduces the central ideas behind Application quality in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A practical resource for understanding more about Application quality.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Application quality. Improving responses through evaluation, prompts, and memory design."
+    },
+    {
+      "id": "resource-23",
+      "title": "Embedding Models: from Architecture to Implementation",
+      "topic": "Embeddings",
+      "description": "How embedding models work and support semantic retrieval.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/embedding-models-from-architecture-to-implementation",
+      "what_is_it": "How embedding models work and support semantic retrieval. It introduces the central ideas behind Embeddings in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Embeddings and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Embeddings. How embedding models work and support semantic retrieval."
+    },
+    {
+      "id": "resource-24",
+      "title": "Federated Fine-tuning of LLMs with Private Data",
+      "topic": "Federated learning",
+      "description": "Distributed fine-tuning approaches that keep data with its source.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/federated-fine-tuning-of-llms-with-private-data",
+      "what_is_it": "Distributed fine-tuning approaches that keep data with its source. It introduces the central ideas behind Federated learning in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A focused resource for learning more about Federated learning.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Federated learning. Distributed fine-tuning approaches that keep data with its source."
+    },
+    {
+      "id": "resource-25",
+      "title": "Intro to Federated Learning",
+      "topic": "Federated learning",
+      "description": "Coordinating model training across data holders without centralizing records.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/intro-to-federated-learning",
+      "what_is_it": "Coordinating model training across data holders without centralizing records. It introduces the central ideas behind Federated learning in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A practical resource for understanding more about Federated learning.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Federated learning. Coordinating model training across data holders without centralizing records."
+    },
+    {
+      "id": "resource-26",
+      "title": "Prompt Compression and Query Optimization",
+      "topic": "Search efficiency",
+      "description": "Reducing repeated context and improving retrieval queries.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/prompt-compression-and-query-optimization",
+      "what_is_it": "Reducing repeated context and improving retrieval queries. It introduces the central ideas behind Search efficiency in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Search efficiency and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Search efficiency. Reducing repeated context and improving retrieval queries."
+    },
+    {
+      "id": "resource-27",
+      "title": "Function-calling and data extraction with LLMs",
+      "topic": "Structured extraction",
+      "description": "Returning structured information and connecting responses to software functions.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/function-calling-and-data-extraction-with-llms",
+      "what_is_it": "Returning structured information and connecting responses to software functions. It introduces the central ideas behind Structured extraction in an organized, learner-focused format. The material shows how those ideas fit into the wider field of AI.",
+      "recommendation_note": "A focused resource for learning more about Structured extraction.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Structured extraction. Returning structured information and connecting responses to software functions."
+    },
+    {
+      "id": "resource-28",
+      "title": "Carbon Aware Computing for GenAI Developers",
+      "topic": "AI infrastructure",
+      "description": "Considering energy use when training or running AI workloads.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/carbon-aware-computing-for-genai-developers",
+      "what_is_it": "Considering energy use when training or running AI workloads. It introduces the central ideas behind AI infrastructure in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A practical resource for understanding more about AI infrastructure.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "AI infrastructure. Considering energy use when training or running AI workloads."
+    },
+    {
+      "id": "resource-29",
+      "title": "Building Applications with Vector Databases",
+      "topic": "Vector search",
+      "description": "Building search and retrieval applications with vector databases.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-applications-with-vector-databases",
+      "what_is_it": "Building search and retrieval applications with vector databases. It introduces the central ideas behind Vector search in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Vector search and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Vector search. Building search and retrieval applications with vector databases."
+    },
+    {
+      "id": "resource-30",
+      "title": "Large Language Models with Semantic Search",
+      "topic": "Semantic search",
+      "description": "Creating embeddings and using vector similarity to retrieve text.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/large-language-models-with-semantic-search",
+      "what_is_it": "Creating embeddings and using vector similarity to retrieve text. It introduces the central ideas behind Semantic search in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Semantic search and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Semantic search. Creating embeddings and using vector similarity to retrieve text."
+    },
+    {
+      "id": "resource-31",
+      "title": "Preprocessing Unstructured Data for LLM Applications",
+      "topic": "Document processing",
+      "description": "Turning documents into useful input for language-model applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/preprocessing-unstructured-data-for-llm-applications",
+      "what_is_it": "Turning documents into useful input for language-model applications. Readers can build familiarity with the topic and follow related discussions more easily. It offers a focused way to explore the subject beyond a brief definition.",
+      "recommendation_note": "A useful way to explore Document processing and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Document processing. Turning documents into useful input for language-model applications."
+    },
+    {
+      "id": "resource-32",
+      "title": "Building Multimodal Search and RAG",
+      "topic": "Multimodal retrieval",
+      "description": "Searching across media formats and retrieving context for model responses.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-multimodal-search-and-rag",
+      "what_is_it": "Searching across media formats and retrieving context for model responses. Readers can build familiarity with the topic and follow related discussions more easily. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Multimodal retrieval and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Multimodal retrieval. Searching across media formats and retrieving context for model responses."
+    },
+    {
+      "id": "resource-33",
+      "title": "Event-Driven Agentic Document Workflows",
+      "topic": "Document automation",
+      "description": "Processing documents through retrieval, automation, and human review.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/event-driven-agentic-document-workflows",
+      "what_is_it": "Processing documents through retrieval, automation, and human review. It introduces the central ideas behind Document automation in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A focused resource for learning more about Document automation.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Document automation. Processing documents through retrieval, automation, and human review."
+    },
+    {
+      "id": "resource-34",
+      "title": "Orchestrating Workflows for GenAI Applications",
+      "topic": "Workflow design",
+      "description": "Coordinating repeatable data and model workflows.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/orchestrating-workflows-for-genai-applications",
+      "what_is_it": "Coordinating repeatable data and model workflows. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about Workflow design.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Workflow design. Coordinating repeatable data and model workflows."
+    },
+    {
+      "id": "resource-35",
+      "title": "Building with Llama 4",
+      "topic": "Multimodal applications",
+      "description": "Building applications with multimodal inputs and long-context models.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-with-llama-4",
+      "what_is_it": "Building applications with multimodal inputs and long-context models. It introduces the central ideas behind Multimodal applications in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Multimodal applications and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Multimodal applications. Building applications with multimodal inputs and long-context models."
+    },
+    {
+      "id": "resource-36",
+      "title": "DSPy: Build and Optimize Agentic Apps",
+      "topic": "AI application design",
+      "description": "Defining, evaluating, and improving modular model workflows.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/dspy-build-and-optimize-agentic-apps",
+      "what_is_it": "Defining, evaluating, and improving modular model workflows. It introduces the central ideas behind AI application design in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A practical resource for understanding more about AI application design.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "AI application design. Defining, evaluating, and improving modular model workflows."
+    },
+    {
+      "id": "resource-37",
+      "title": "Reinforcement Fine-Tuning LLMs with GRPO",
+      "topic": "Model adaptation",
+      "description": "Reward-based fine-tuning and measuring reasoning behavior.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/reinforcement-fine-tuning-llms-with-grpo",
+      "what_is_it": "Reward-based fine-tuning and measuring reasoning behavior. It introduces the central ideas behind Model adaptation in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Model adaptation and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Model adaptation. Reward-based fine-tuning and measuring reasoning behavior."
+    },
+    {
+      "id": "resource-38",
+      "title": "MCP: Build Rich-Context AI Apps with Anthropic",
+      "topic": "Connecting AI to data",
+      "description": "Connecting applications to tools and reference information through MCP.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic",
+      "what_is_it": "Connecting applications to tools and reference information through MCP. Readers can build familiarity with the topic and follow related discussions more easily. It offers a focused way to explore the subject beyond a brief definition.",
+      "recommendation_note": "A useful way to explore Connecting AI to data and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Connecting AI to data. Connecting applications to tools and reference information through MCP."
+    },
+    {
+      "id": "resource-39",
+      "title": "Building AI Voice Agents for Production",
+      "topic": "Speech applications",
+      "description": "Speech interfaces and audio pipelines for voice applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-ai-voice-agents-for-production",
+      "what_is_it": "Speech interfaces and audio pipelines for voice applications. It introduces the central ideas behind Speech applications in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A practical resource for understanding more about Speech applications.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Speech applications. Speech interfaces and audio pipelines for voice applications."
+    },
+    {
+      "id": "resource-40",
+      "title": "Building Code Agents with Hugging Face smolagents",
+      "topic": "Code generation",
+      "description": "Model workflows that write and execute code to complete tasks.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-code-agents-with-hugging-face-smolagents",
+      "what_is_it": "Model workflows that write and execute code to complete tasks. Readers can build familiarity with the topic and follow related discussions more easily. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Code generation and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Code generation. Model workflows that write and execute code to complete tasks."
+    },
+    {
+      "id": "resource-41",
+      "title": "Getting Structured LLM Output",
+      "topic": "Structured output",
+      "description": "Getting validated structured data from language models.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/getting-structured-llm-output",
+      "what_is_it": "Getting validated structured data from language models. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Structured output.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Structured output. Getting validated structured data from language models."
+    },
+    {
+      "id": "resource-42",
+      "title": "Retrieval Optimization: From Tokenization to Vector Quantization",
+      "topic": "Vector search",
+      "description": "Choices that influence search speed and relevance.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/retrieval-optimization-from-tokenization-to-vector-quantization",
+      "what_is_it": "Choices that influence search speed and relevance. Readers can build familiarity with the topic and follow related discussions more easily. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Vector search and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Vector search. Choices that influence search speed and relevance."
+    },
+    {
+      "id": "resource-43",
+      "title": "Safe and Reliable AI via Guardrails",
+      "topic": "Output validation",
+      "description": "Adding defined checks and constraints to model applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/safe-and-reliable-ai-via-guardrails",
+      "what_is_it": "Adding defined checks and constraints to model applications. It introduces the central ideas behind Output validation in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Output validation and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Output validation. Adding defined checks and constraints to model applications."
+    },
+    {
+      "id": "resource-44",
+      "title": "How Transformer LLMs Work",
+      "topic": "Transformers",
+      "description": "A visual explanation of the architecture behind language models.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/how-transformer-llms-work",
+      "what_is_it": "A visual explanation of the architecture behind language models. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Transformers.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Transformers. A visual explanation of the architecture behind language models."
+    },
+    {
+      "id": "resource-45",
+      "title": "Attention in Transformers: Concepts and Code in PyTorch",
+      "topic": "Attention",
+      "description": "The attention mechanism that weighs relationships among input elements.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/attention-in-transformers-concepts-and-code-in-pytorch",
+      "what_is_it": "The attention mechanism that weighs relationships among input elements. It introduces the central ideas behind Attention in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A practical resource for understanding more about Attention.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Attention. The attention mechanism that weighs relationships among input elements."
+    },
+    {
+      "id": "resource-46",
+      "title": "Build Long-Context AI Apps with Jamba",
+      "topic": "Long documents",
+      "description": "Building applications that process long documents.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/build-long-context-ai-apps-with-jamba",
+      "what_is_it": "Building applications that process long documents. The material shows how those ideas fit into the wider field of AI. It offers a focused way to explore the subject beyond a brief definition. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A practical resource for understanding more about Long documents.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Long documents. Building applications that process long documents."
+    },
+    {
+      "id": "resource-47",
+      "title": "Introduction to On-Device AI",
+      "topic": "On-device AI",
+      "description": "Practical considerations for running models locally.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/introduction-to-on-device-ai",
+      "what_is_it": "Practical considerations for running models locally. The material shows how those ideas fit into the wider field of AI. Readers can build familiarity with the topic and follow related discussions more easily. It is a practical starting point for learning more about the area.",
+      "recommendation_note": "A focused resource for learning more about On-device AI.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "On-device AI. Practical considerations for running models locally."
+    },
+    {
+      "id": "resource-48",
+      "title": "Quantization Fundamentals with Hugging Face",
+      "topic": "Model compression",
+      "description": "Model quantization and trade-offs when reducing model size.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/quantization-fundamentals-with-hugging-face",
+      "what_is_it": "Model quantization and trade-offs when reducing model size. It introduces the central ideas behind Model compression in an organized, learner-focused format. This can help readers place new terminology in context when AI tools are discussed.",
+      "recommendation_note": "A useful way to explore Model compression and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Model compression. Model quantization and trade-offs when reducing model size."
+    },
+    {
+      "id": "resource-49",
+      "title": "Building Generative AI Applications with Gradio",
+      "topic": "Application prototyping",
+      "description": "Creating simple user interfaces for generative AI applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/building-generative-ai-applications-with-gradio",
+      "what_is_it": "Creating simple user interfaces for generative AI applications. It introduces the central ideas behind Application prototyping in an organized, learner-focused format. It offers a focused way to explore the subject beyond a brief definition.",
+      "recommendation_note": "A practical resource for understanding more about Application prototyping.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Application prototyping. Creating simple user interfaces for generative AI applications."
+    },
+    {
+      "id": "resource-50",
+      "title": "Evaluating and Debugging Generative AI",
+      "topic": "Evaluation",
+      "description": "Inspecting outputs, tracing issues, and iterating on AI applications.",
+      "provider": "DeepLearning.AI",
+      "url": "https://www.deeplearning.ai/courses/evaluating-and-debugging-generative-ai",
+      "what_is_it": "Inspecting outputs, tracing issues, and iterating on AI applications. It introduces the central ideas behind Evaluation in an organized, learner-focused format. Readers can build familiarity with the topic and follow related discussions more easily.",
+      "recommendation_note": "A useful way to explore Evaluation and follow related AI discussions.",
+      "audience_level": "not_reviewed",
+      "audience_basis": "Not screened yet for a nontechnical weekly newsletter audience.",
+      "semantic_text": "Evaluation. Inspecting outputs, tracing issues, and iterating on AI applications."
+    }
+  ]
+}

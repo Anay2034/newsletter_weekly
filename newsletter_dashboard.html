@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Pulse · Weekly approval</title>
+  <style>
+    :root{--ink:#20202a;--muted:#666675;--purple:#7868b0;--line:#e6e3ed;--paper:#fffefa;--bg:#f4f2f8;--green:#e6f3e8;--amber:#fff1d4;--red:#a73a3a}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+    header{background:#fff;padding:20px max(24px,calc((100% - 1120px)/2));border-bottom:2px solid var(--purple);display:flex;justify-content:space-between;align-items:center;gap:20px}
+    h1{font:32px Georgia,serif;margin:0}header p{margin:3px 0 0;color:var(--muted);font-size:13px}.local{font-size:12px;border:1px solid var(--line);border-radius:18px;padding:6px 12px;color:#5c537f;background:#faf9fd;white-space:nowrap}
+    main{max-width:1120px;margin:24px auto;padding:0 20px 60px}.toolbar,.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px;box-shadow:0 2px 8px #2922460a}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.toolbar p{margin:3px 0;color:var(--muted)}.actions{display:flex;gap:9px;flex-wrap:wrap}
+    button{font:inherit;font-size:14px;font-weight:600;border:0;border-radius:8px;padding:10px 15px;cursor:pointer;background:var(--purple);color:white}button.secondary{background:#eeeaf7;color:#38314e}button:disabled{opacity:.55;cursor:wait}
+    .status{font-size:14px;color:var(--muted)}.status strong{color:var(--ink)}.error{color:var(--red);white-space:pre-wrap}.success{background:var(--green);padding:10px 13px;border-radius:8px;color:#255830}
+    h2{font:23px Georgia,serif;margin:3px 0 14px}.intro{color:var(--muted);margin-top:-7px;margin-bottom:18px}.slot{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}.slot-head{padding:15px 19px 9px;display:flex;justify-content:space-between;gap:10px;align-items:baseline}.slot-head h3{margin:0;font-size:17px}.slot-head span{font-size:12px;color:var(--muted)}.slot-body{padding:0 19px 17px}.pick{width:100%;padding:10px 12px;background:white;border:1px solid #d7d3e2;border-radius:7px;color:var(--ink);font-size:14px}.details{padding:12px 2px 0;color:#444452;min-height:62px}.details p{margin:4px 0}.details .fine{font-size:12px;color:var(--muted)}.details a{color:#5b4c9b}
+    .controls{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.controls label{font-size:12px;color:var(--muted);display:grid;gap:5px}.controls input,.manual-form textarea{font:inherit;font-size:14px;border:1px solid #d7d3e2;border-radius:7px;padding:9px 10px;color:var(--ink);background:#fff}.controls input[type=number]{width:90px}.controls input[type=date]{width:160px}.manual-form{display:grid;gap:9px;padding:12px;background:#f8f6fc;border:1px solid var(--line);border-radius:8px;margin-top:12px}.manual-form[hidden]{display:none}.manual-form input,.manual-form textarea{width:100%}.manual-form textarea{min-height:75px;resize:vertical;font-family:inherit}.manual-help{font-size:12px;color:var(--muted);margin:0}
+    .preview-wrap{height:850px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#e9e9e9}.preview-wrap iframe{width:100%;height:100%;border:0}.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed #c9c4d7;border-radius:10px}
+    details{margin-top:14px;color:var(--muted);font-size:13px}summary{cursor:pointer;font-weight:600;color:#514a64}
+    @media(max-width:640px){header{padding:17px 18px}.local{display:none}main{margin-top:14px;padding:0 12px 36px}.toolbar{align-items:flex-start}.preview-wrap{height:620px}}
+  </style>
+</head>
+<body>
+  <header><div><h1>AI Pulse</h1><p>Weekly news review · approval · HTML preview</p></div><div class="local">Private · running on this Mac</div></header>
+  <main>
+    <section class="toolbar">
+      <div><strong id="week-label">This week</strong><p class="status" id="run-status">Checking local workflow…</p></div>
+      <div class="actions"><button class="secondary" id="refresh">Refresh this week's news</button><button class="secondary" id="run">Run collection + ranking</button></div>
+    </section>
+    <div id="message" aria-live="polite"></div>
+    <section id="approval-section" hidden>
+      <div class="panel"><h2>Choose the five stories</h2><p class="intro">The recommended story is selected in each section. Review the alternatives, reasons, source, publication date, and caveats before approving.</p><div class="controls">
+        <label>Issue number<input id="issue-number" type="number" min="1"></label>
+        <label>Issue date<input id="issue-date" type="date"></label>
+        <button id="approve">Approve and generate preview</button>
+      </div></div>
+      <div id="slots"></div>
+      <details><summary>Editorial rules applied</summary><p>Only news published in the previous seven days; one lead AI story; one AI healthcare story and one AI story from another field; two distinct India health-insurance market stories. Exclude NBHI-focused market news and AI stories whose main framing creates fear or presents AI as a security risk. Sending is not part of this workflow.</p></details>
+    </section>
+    <section id="preview-section" hidden class="panel"><div class="toolbar" style="padding:0;border:0;box-shadow:none"><div><h2>Generated issue preview</h2><p class="intro">Review the rendered HTML. Download it when it is ready.</p></div><div class="actions"><a id="download-link" href="/api/download"><button>Download HTML</button></a></div></div><div class="preview-wrap"><iframe id="preview" title="Generated newsletter preview"></iframe></div></section>
+  </main>
+<script>
+const slots=[
+  ['lead_ai','Lead AI story'],['ai_healthcare','AI in healthcare'],['other_ai','Other AI field'],
+  ['health_insurance_india_a','Health Insurance in India · story 1'],['health_insurance_india_b','Health Insurance in India · story 2']
+];
+let currentStatus=null,currentRanking=null,pollTimer=null;
+const $=id=>document.getElementById(id);
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function message(text,kind=''){const host=$('message');host.className=kind;host.textContent=text;host.style.marginBottom=text?'14px':'0'}
+async function getJson(url){const r=await fetch(url,{cache:'no-store'});const j=await r.json();if(!r.ok)throw new Error(j.error||r.statusText);return j}
+async function postJson(url,data){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();if(!r.ok)throw new Error(j.error||r.statusText);return j}
+function renderSlot(slot,label,ranking,approved){
+  const options=ranking.slots?.[slot]||[];const candidates=Object.fromEntries((ranking.candidates||[]).map(c=>[String(c.id),c]));
+  const box=document.createElement('article');box.className='slot';box.innerHTML=`<div class="slot-head"><h3>${esc(label)}</h3><span>${options.length} ranked option${options.length===1?'':'s'}</span></div><div class="slot-body"><select class="pick" id="pick-${slot}" aria-label="${esc(label)}"></select><div class="details" id="detail-${slot}"></div><div class="manual-form" id="manual-${slot}" hidden><p class="manual-help">Add a story published in the past 7 days. Please verify it against its source.</p><input data-field="title" placeholder="News headline" aria-label="Manual story headline"><input data-field="publisher" placeholder="Publisher / source name" aria-label="Publisher"><input data-field="url" type="url" placeholder="https:// source link" aria-label="Source URL"><label class="manual-help">Published date and time<input data-field="published_at" type="datetime-local"></label><textarea data-field="summary" placeholder="Short factual summary" aria-label="Story summary"></textarea></div></div>`;
+  const select=box.querySelector('select');
+  options.forEach((o,i)=>{const c=candidates[String(o.id)]||{};const opt=document.createElement('option');opt.value=o.id;opt.textContent=`${i===0?'★ Recommended · ':''}${c.title||o.id} (${c.publisher||c.source||'Source'} · ${c.published_date||''})`;select.append(opt)});
+  const manualOption=document.createElement('option');manualOption.value='__manual__';manualOption.textContent='＋ Add news manually…';select.append(manualOption);
+  if(options.some(o=>String(o.id)===String(approved[slot])))select.value=String(approved[slot]);
+  const update=()=>{const manual=select.value==='__manual__';box.querySelector(`#manual-${slot}`).hidden=!manual;const o=options.find(x=>String(x.id)===select.value)||{};const c=candidates[String(o.id)]||{};const a=[];
+    if(c.summary)a.push(`<p>${esc(c.summary)}</p>`);if(o.reason)a.push(`<p><strong>Why it ranks:</strong> ${esc(o.reason)}</p>`);if(o.caveat)a.push(`<p class="fine"><strong>Caveat:</strong> ${esc(o.caveat)}</p>`);
+    const pub=c.publisher||c.source||'Source';if(c.url)a.push(`<p class="fine"><a target="_blank" rel="noreferrer" href="${esc(c.url)}">${esc(pub)} · ${esc(c.published_date||'Open source')}</a> · ${esc(o.source_quality||'')}</p>`);
+    box.querySelector(`#detail-${slot}`).innerHTML=manual?'<p class="fine">This story will be used for this section when you approve and generate.</p>':a.join('');};select.addEventListener('change',update);update();return box;
+}
+async function load(){
+  try{
+    currentStatus=await getJson('/api/status');
+    $('week-label').textContent=`Week of ${currentStatus.monday} · ${currentStatus.week}`;
+    $('run-status').innerHTML=currentStatus.busy?`<strong>${esc(currentStatus.step)}</strong> · This may take a few minutes.`:currentStatus.error?`<span class="error">${esc(currentStatus.step)}: ${esc(currentStatus.error)}</span>`:`<strong>${esc(currentStatus.step||'Ready')}</strong>${currentStatus.ai_provider?' · '+esc(currentStatus.ai_provider)+' configured':''}${currentStatus.has_ranking?' · shortlist available':''}`;
+    $('issue-number').value=currentStatus.issue_number;$('issue-date').value=currentStatus.issue_date_iso||currentStatus.monday;
+    if(currentStatus.has_ranking){currentRanking=await getJson('/api/ranking');const approval=await getJson('/api/status');$('slots').replaceChildren(...slots.map(([key,label])=>renderSlot(key,label,currentRanking,approval.approved_ids||{})));$('approval-section').hidden=false;}
+    if(currentStatus.generated){$('preview-section').hidden=false;$('preview').src='/api/preview?'+Date.now();}
+    else $('preview-section').hidden=true;
+    $('run').disabled=$('refresh').disabled=currentStatus.busy;
+    $('approve').disabled=currentStatus.busy||!currentStatus.has_ranking||!currentStatus.api_key_configured;
+    if(currentStatus.error)message(currentStatus.error,'error');else if(currentStatus.generated)message('Issue generated. Review the preview below or download the HTML.','success');else if(!currentStatus.api_key_configured)message('Add GEMINI_API_KEY to .env to enable automatic AI ranking and copy generation. Collection can still be run.','error');else message('');
+    if(currentStatus.weekday===0&&currentStatus.local_hour>=9&&!currentStatus.has_ranking&&!currentStatus.busy&&!sessionStorage.getItem('auto-run-'+currentStatus.week)){
+      sessionStorage.setItem('auto-run-'+currentStatus.week,'1');await postJson('/api/run',{force:false});message('Monday run started automatically: collecting news and ranking candidates.','');await load();
+    }
+    if(currentStatus.busy){clearTimeout(pollTimer);pollTimer=setTimeout(load,3500)}
+  }catch(e){message(e.message,'error');$('run-status').textContent='Local dashboard is available; workflow status could not be loaded.'}
+}
+async function run(force){try{message('Starting collection and AI ranking…');await postJson('/api/run',{force});await load()}catch(e){message(e.message,'error')}}
+$('run').addEventListener('click',()=>run(false));$('refresh').addEventListener('click',()=>run(true));
+$('approve').addEventListener('click',async()=>{
+  const manual_stories={};const approved_ids=Object.fromEntries(slots.map(([key])=>{const value=$(`pick-${key}`).value;if(value==='__manual__'){const form=$(`manual-${key}`);manual_stories[key]=Object.fromEntries([...form.querySelectorAll('[data-field]')].map(input=>[input.dataset.field,input.value.trim()]));return[key,`manual-pending-${key}`]}return[key,value]}));
+  const ids=Object.values(approved_ids);if(ids.some(x=>!x)||new Set(ids).size!==ids.length){message('Choose five different stories before approving.','error');return}
+  const date=$('issue-date').value.split('-').reverse().join('/');
+  try{message('Saving approval and generating newsletter copy…');await postJson('/api/approve-generate',{approved_ids,manual_stories,issue_number:$('issue-number').value,issue_date:date});await load()}catch(e){message(e.message,'error')}
+});
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "window_hours": 168,
+  "queries": {
+    "ai_healthcare": [
+      "AI healthcare",
+      "artificial intelligence medical health",
+      "AI clinical care hospital"
+    ],
+    "other_ai": [
+      "artificial intelligence AI technology",
+      "AI research product launch agents models"
+    ],
+    "lead_ai": [
+      "artificial intelligence major AI news"
+    ],
+    "health_insurance_india": [
+      "India health insurance IRDAI regulation policyholder claims -\"Niva Bupa\"",
+      "India standalone health insurers premiums market share growth -\"Niva Bupa\"",
+      "India health insurance insurer product launch partnership expansion -\"Niva Bupa\"",
+      "India health insurance cashless claims hospital network consumer -\"Niva Bupa\"",
+      "India health insurance merger acquisition investment distribution -\"Niva Bupa\""
+    ]
+  },
+  "feeds": [
+    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "category": "other_ai"},
+    {"name": "Google DeepMind Blog", "url": "https://deepmind.google/blog/rss.xml", "category": "other_ai"},
+    {"name": "arXiv cs.AI", "url": "https://rss.arxiv.org/rss/cs.AI", "category": "other_ai"},
+    {"name": "Indian Express Insurance", "url": "https://indianexpress.com/section/insurance/feed/", "category": "health_insurance_india"},
+    {"name": "LiveMint Insurance", "url": "https://www.livemint.com/rss/insurance", "category": "health_insurance_india"}
+  ]
+}

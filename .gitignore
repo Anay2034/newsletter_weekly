@@ -1,0 +1,24 @@
+# Python environments and bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local credentials; keep the documented template available
+.env
+.env.*
+!.env.example
+newsletter.env
+
+# Local machine and editor files
+.DS_Store
+*.swp
+*.swo
+.idea/
+
+# Generated data and caches
+/data/embedding_cache.json
+/data/collected/
+
+# Weekly generated rankings, approvals, previews, and logs
+/issues/
